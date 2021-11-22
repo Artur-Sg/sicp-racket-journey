@@ -30,24 +30,6 @@
 (define (sqrt x)
     (sqrt-iter 1.0 x))
 
-#|
-;; variant with inner declared procedures (no need to pass second argument)
-(define (sqrt x)
-    (define (good-enough? guess)
-        (< (abs (- (square guess) x)) 0.001)
-        )
-    (define (improve guess)
-        (average guess (/ x guess))
-        )
-    (define (average a b)
-        (/ (+ a b) 2)
-        )
-    (define (sqrt-iter guess)
-        (if (good-enough? guess) guess
-            (sqrt-iter (improve guess)))
-        )(sqrt-iter 1.0))
-|#
-
 (run-tests
     (test-suite "1.1.7 Example: Square Roots by Newton's Method"
         #:before (lambda () (display "1.1.7  Example: Square Roots by Newton's Method tests\n"))

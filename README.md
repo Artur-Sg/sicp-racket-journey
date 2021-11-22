@@ -1,6 +1,6 @@
 # Sicp Racket
 
-My attempt at learning the SICP
+My attempt in learning SICP
 
 ### Requirements
 

@@ -31,9 +31,8 @@
 |#
 
 #|
-The default if statement is a special form only evaluates one of parameters 
-- not both even when an interpreter follows applicative substitution
-New-if doesn't have this property. It never stops calling itself due 
-to the third parameter passed to it in sqrt-iter.
-Re-defining a special form using generic arguments eventually overflows 
-the stack causing an out of memory error.|#
+    new-if - applicative order (produces out of memory). 
+    It is a procedure, not a special-form and all sub-expressions are evaluated before new-if
+    is applied to the values of the operands. 
+    if - normal order evaluation
+|#

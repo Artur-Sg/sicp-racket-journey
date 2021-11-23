@@ -38,6 +38,7 @@
     (define (cbcrt-iter guess x_2)
         (define iter (improve x_2 guess))
         (if (= guess iter)
+        ;;(if (< (abs(- guess iter)) tolerance)
             guess
             (cbcrt-iter iter x_2)
         )
@@ -49,6 +50,6 @@
     (test-suite "Exercise 1.8"
         #:before (lambda () (display "Exercise 1.8 test\n"))
         (test-case "Test list for Newton's method for cube roots"
-            (check-within (list (cbcrt 0.000027) (cbcrt 8) (cbcrt 27) (cbcrt 64) (cbcrt 1000000000)) (list 0.03 2 3 4 1000) tolerance))
+            (check-within (list (cbcrt 0.000027) (cbcrt 8) (cbcrt 27) (cbcrt 64) (cbcrt 1000000000) (cbcrt 10000000000000)) (list 0.03 2 3 4 1000 21544.3469) tolerance))
         )
 )
